@@ -1,0 +1,3 @@
+backend_backend_homepage:
+    path:     /
+    defaults: { _controller: BackendBackendBundle:Default:index }

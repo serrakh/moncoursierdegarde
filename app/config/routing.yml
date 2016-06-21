@@ -1,16 +1,7 @@
-frontend_frontend:
+Frontend:
     resource: "@FrontendFrontendBundle/Resources/config/routing.yml"
     prefix:   /
 
-backend_backend:
-    resource: "@BackendBackendBundle/Resources/config/routing.yml"
-    prefix:   /
-
-garde_frontend:
-    resource: "@GardeFrontendBundle/Resources/config/routing.yml"
-    prefix:   /
-
-garde_backend:
-    resource: "@GardeBackendBundle/Resources/config/routing.yml"
-    prefix:   /
-
+BackEnd:
+    resource: "@BackendBackendBundle/Resources/config/routing_admin.yml"
+    prefix:   /admin

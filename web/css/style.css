@@ -1,0 +1,335 @@
+.btnmdg {
+  background-color: #39B673;
+  padding: 12px 16px;
+  color: whitesmoke;
+  margin-bottom: 0px;
+  font-family: 'Maven Pro', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+      touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  position: relative;
+  bottom: -250px;
+}
+.btnmdg:hover {
+   background-color: #D65C14;
+}
+
+.piedpage{
+    
+    background-color: #2BB673;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+.piedpage p{
+    color:whitesmoke;
+}
+
+.signature{
+    font-family: 'Maven Pro', sans-serif;
+    background-color:#232323;
+    padding-top: 10px;
+    color: whitesmoke;
+   text-transform: uppercase;
+   font-size: 12px;
+   font-weight: 400;
+}
+.plansite{
+    color:#DFDFDF;
+    padding: 7px 50px 9px 6px;
+    margin-right: 30px;
+    
+    border: 1px solid transparent;
+    border-bottom-color:whitesmoke;
+}
+.navbar-custom {
+    -webkit-box-shadow: 0px 2px 10px 2px rgba(56,56,56,0.5);
+    -moz-box-shadow: 0px 2px 10px 2px rgba(56,56,56,0.5);
+    box-shadow: 0px 2px 10px 2px rgba(56,56,56,0.5);
+
+    background-color: rgba(0,0,0,0.9);
+}
+.navbar-custom .navbar-nav > .active{
+    color: #000;
+    background: #d65c14;
+}
+
+}
+.navbar-custom > .active > a,
+.navbar-custom > .active > a:hover,
+.navbar-custom > .active > a:focus {
+    color: #000;
+    background: #19AA6D;
+}
+
+.navbar-custom a {
+    color: #fff;
+}
+.navbar-custom a:not(.navbar-brand):not(.insc-coursier):not(.navbar-client):hover {
+    background-color: #19AA6D !important
+}
+.pgerytext{
+    color:whitesmoke;
+    font-style: oblique;
+}
+.cover-home{
+    background-image: url(pic/accuiel.jpg);
+    background-repeat: no-repeat;
+    background-position: 50% 70%;
+    width:100%;
+    height:550px;
+    height:550px;
+    display: block;
+    z-index:-10;
+    top:0px;
+    background-size: cover;
+    z-index: -20;
+    margin: 0 0 0 0!important;
+    
+    }
+    
+.cover-home h1{
+    padding-top:70px;
+    color:whitesmoke;
+  text-align: center;
+  font-family: 'Maven Pro', sans-serif;
+  font-weight: 700;
+  font-size: 60px;
+    margin-bottom: 10px;
+    text-shadow: 2px 1px #000;
+    
+}
+.cover-home P{
+    color:whitesmoke;
+  text-align: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-family: 'Maven Pro', sans-serif;
+  font-weight: 600;
+  font-size: 22px;
+    margin-bottom: 30px;
+    text-shadow: 2px 1px #000;
+    
+    
+    
+}
+.cover-home-b, .cover-home-c{
+    width:100%;
+    margin: 0 0 0 0 !important;
+    padding: 0 0 0 0 !important;
+    position: absolute;
+}
+.cover-home-b{
+    top: 0px;
+    pointer-events: none;
+}
+@media (max-width: 600px){
+    .cover-home h1{
+        padding-top:70px;
+        font-size: 40px;
+        
+    }
+}
+
+@media (max-width: 600px){
+    .cover-home p{
+        font-size: 20px;
+    
+    }
+}
+
+.bg-row{
+    margin: 0 0 0 0!important;
+}
+
+@media (max-width: 480px){
+    .cover-home{
+        background-position: 47% 100%;
+        background-size: cover;
+    }
+}
+
+.interligne{
+    padding-top: 18px;
+    padding-bottom: 18px;
+    
+}
+.interligne b,h3{
+    color: #1ee184;
+}
+
+
+
+
+.interligne p{
+    color: #353535
+}
+
+.cover-contact{
+    background-image:url(pic/contact.jpg) ;
+    background-color: #28292c;
+    background-repeat: no-repeat;
+    background-position: 50% 70%;
+    min-height:300px;
+    display: block;
+    z-index:-10;
+    top:0px;
+    background-size: cover;
+    opacity: 0.6;
+    filter:alpha(opacity=10);
+    -webkit-transition:all 0.4s ease-in-out;
+    -moz-transition:all 0.4s ease-in-out;
+    -o-transition:all 0.4s ease-in-out;
+    transition:all 0.4s ease-in-out;
+}
+.cover-contact h1{
+    font-family: 'Maven Pro', sans-serif;
+    padding-top:100px;
+    color:whitesmoke;
+  text-align: center;
+  font-size: 45px;
+    margin-bottom: 30px;
+    text-shadow: 2px 1px #000;
+    
+}
+.clear-form {
+    position: relative;
+    float: right;
+    padding: 0 18px 0 0;
+    text-decoration: none;
+    background-color: transparent;
+    color:#1E8128;
+}
+.con{
+    margin-top: 20px;
+}
+.apro{padding-top:70px ;}
+
+.resso{
+    margin-right:9px;
+    }
+.fa-facebook:hover{
+    color:#245599;
+}
+.fa-twitter:hover{
+    color:#017AB6;
+}    
+    
+.btncmd {
+  display: inline-block;
+  padding-top: 10px;
+  padding-bottom: 18px;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+      touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  border: 1px solid transparent;
+
+}
+
+.maps{
+    background-color: turquoise;
+    width:100%;
+    min-height:400px;
+    display: block;
+    margin: 0 0 0 0!important; 
+}
+.champsrem{
+    color: red;
+}
+
+.cover-tarif{
+    background-image: url(pic/tarif.jpg);
+    background-repeat: no-repeat;
+    background-position: 50% 70%;
+    width:100%;
+    height:60%;
+    min-height:450px;
+    display: block;
+    z-index:-10;
+    top:0px;
+    background-size: cover;
+    z-index: -20;
+    margin: 0 0 0 0!important;
+}
+.cover-tarif h1{
+    padding-top:100px;
+    color:whitesmoke;
+  text-align: center;
+  font-size: 70px;
+    margin-bottom: 30px;
+    text-shadow: 2px 1px #1E8128;
+    
+}
+
+@media (max-width: 600px){
+    .cover-tarif h1{
+        font-size: 40px;
+        
+    }
+}
+@media (max-width: 900px){
+    .cover-tarif{
+    background-image: url(pic/tarif.jpg);
+    background-repeat: no-repeat;
+    min-height:300px;
+        
+        
+    }
+}
+@media (max-width: 600px){
+    .cover-tarif{
+    background-image: url(pic/tarifsm.jpg);
+    background-repeat: no-repeat;
+    min-height:250px;   
+     }   
+    }
+@media (max-width: 600px){
+    .cover-tarif p{
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 788px){
+    .btnmdg {
+        position: relative;
+  bottom: -150px;
+        
+    }
+}
+@media (max-width: 600px){
+    .btnmdg {
+        position: relative;
+  bottom: -240px;
+        
+    }
+}
+
+@media (max-width: 522px){
+    .btnmdg {
+        position: relative;
+  bottom: -150px;
+        
+    }
+}

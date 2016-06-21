@@ -1,0 +1,111 @@
+<!DOCTYPE HTML>
+<html lang="FR">
+<head>
+    <title>Mon coursier</title>
+    <link rel="shortcut icon" href="{{ asset('ico.jpg') }}"/>
+    <!-- compatibilte de meta pour le navigator ie -->
+    <meta charset="ISO-8859-1" />
+    <meta http-equiv="X-UA-compatible" content="IE-edge" />
+    <!-- mobile meta -->
+    <meta name="viewport" content="width=device-width,initial-scal=1"/>
+    {% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700"/>
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}"/>
+    {% endblock %}
+    <style>
+        #map {
+            width:100%;
+            height: 400px;
+            padding:0 0 0 0;
+        }
+    </style>
+    {% block javascriptsTop %}
+    <script src="{{ asset('js/bootstrap.min.js') }}"> </script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    {% endblock %}
+</head>
+
+<body>
+{% block headernav %}
+<nav class="navbar navbar-fixed-top navbar-custom navbar-inverse" role="navigation">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html"><img src="css/pic/logo.svg" /></a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="apropos.html">Qui sommes nous ?</a></li>
+                <li><a href="tarif.html">Tarif</a></li>
+                <li><a href="contact.html">contact</a></li>
+                <li class="active"><a href="">Suiver Votre Coursier</a></li>
+
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+{% endblock %}
+{% block footer %}
+<div class="container-fluid piedpage">
+    <div class="container">
+        <div class="row-centered">
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 ">
+                <h4>A PROPOS DE MON COURSIER DE GARDE</h4>
+                <p> Moncoursierdegarde.ma est un service édité par la société MALAKDIS’ sarl , un réseau de coursiers disponible à Rabat et bientôt dans toutes les grandes villes marocaines.</p>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 "><h4>PLANS DE SITE</h4>
+                <li class="fa fa-arrow-right  fa-inverse"></li><a href="index.html" class=" pgerytext "> Accueil </a><hr />
+                <li class="fa fa-arrow-right  fa-inverse"></li></li><a href="apropos.html" class="pgerytext "> Qui sommes nous ? </a><hr />
+                <li class="fa fa-arrow-right  fa-inverse"></li></li><a href="tarif.html" class="active pgerytext "> Tarif </a><hr />
+                <li class="fa fa-arrow-right  fa-inverse"></li></li><a href="contact.html" class="active pgerytext "> Contact </a>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12  "><h4>INFO CONTACT</h4>
+
+                <b>Adresse : </b><br /> <p> 15 Avenue Al Abtal Agadal <br />Rabat, Maroc </p> <hr />
+                <b>Numéro de Téléphone : </b><br /><p>06 25 14 78 49 </p> <hr />
+                <b>Adresse E-mail</b><br /><p>contact@moncoursierdegarde.ma </p>
+
+                <a class="resso" href="www.facebook.com/moncoursierdegarde.ma"><li class="fa  fa-lg fa-facebook fa-inverse"></li></a>
+                <a class="resso" href="#"><li class="fa  fa-lg fa-twitter fa-inverse"></li></a>
+
+
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 "><h4>SUIVEZ MON COURSIER DE GARDE </h4>
+                <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fmoncoursierdegarde.ma&tabs=timeline&width=270&height=200&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="270" height="200" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe></div>
+
+        </div>
+    </div>
+</div>
+<div class="container-fluid signature">
+    <div class="row"> <p class="text-center">copyright 2016 @ moncoursierdegarde</p> </div>
+
+</div>
+{% endblock %}
+{% block javascriptsFooter %}
+<!-- jQuery Version 1.11.1 -->
+<script src="{{ asset('js/jquery.js') }}"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="{{ asset('js/bootstrap.min.js') }}"></script>
+{% endblock %}
+</body>
+
+</html>

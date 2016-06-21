@@ -1,9 +1,9 @@
-{% extends '::layout:layout.html.twig' %}
+{% extends '::layout.html.twig' %}
 {% block stylesheets %}
-    parent()
+    {{ parent() }}
 {% endblock %}
 {% block javascriptsTop %}
-    parent()
+    {{ parent() }}
 {% endblock %}
 {% block headernav %}
     {{ parent() }}
@@ -49,5 +49,5 @@
 </div>
 {% endblock %}
 {% block footer %}
-    parent()
+    {{ parent() }}
 {% endblock %}

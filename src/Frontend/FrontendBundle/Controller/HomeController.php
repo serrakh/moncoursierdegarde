@@ -17,7 +17,7 @@ class HomeController extends Controller
 
     public function indexAction()
     {
-        return $this->render('FrontendBundle:HomeManager:body.html.twig');
+        return $this->render('FrontendFrontendBundle:HomeManager:body.html.twig');
     }
 
 }

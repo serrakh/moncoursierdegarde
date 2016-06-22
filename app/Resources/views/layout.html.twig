@@ -9,10 +9,16 @@
     <!-- mobile meta -->
     <meta name="viewport" content="width=device-width,initial-scal=1"/>
     {% block stylesheets %}
-    <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}"/>
-    <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700"/>
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}"/>
+
+        {% stylesheets
+        'bundles/frontendfrontend/css/bootstrap.css'
+        'bundles/frontendfrontend/css/font-awesome.min.css'
+        'bundles/frontendfrontend/css/style.css'
+        filter='cssrewrite' output='css/compiled/app.css' %}
+        <link rel="stylesheet" href="{{ asset_url }}" />
+        {% endstylesheets %}
+
     {% endblock %}
     <style>
         #map {
@@ -22,7 +28,6 @@
         }
     </style>
     {% block javascriptsTop %}
-    <script src="{{ asset('js/bootstrap.min.js') }}"> </script>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -44,7 +49,11 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index.html"><img src="css/pic/logo.svg" /></a>
+            <a class="navbar-brand" href="{{ path('frontend_homepage') }}">
+                {% image '@FrontendFrontendBundle/Resources/public/css/pic/logo.svg' %}
+                <img src="{{ asset_url }}" alt="logo" />
+                {% endimage %}
+            </a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -102,11 +111,14 @@
 </div>
 {% endblock %}
 {% block javascriptsFooter %}
-<!-- jQuery Version 1.11.1 -->
-<script src="{{ asset('js/jquery.js') }}"></script>
 
-<!-- Bootstrap Core JavaScript -->
-<script src="{{ asset('js/bootstrap.min.js') }}"></script>
+    {% javascripts
+    'bundles/forntendfrontend/js/jquery.js'
+    'bundles/forntendfrontend/js/bootstrap.min.js'
+    %}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+
 {% endblock %}
 </body>
 

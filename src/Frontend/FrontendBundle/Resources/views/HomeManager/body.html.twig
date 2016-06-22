@@ -20,26 +20,38 @@
 
             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 text-center">
 
-                <img class="center-block" src="css/pic/cmd.svg" alt="..."/><br />
+                {% image '@FrontendFrontendBundle/Resources/public/css/pic/cmd.svg' %}
+                <img class="center-block" src="{{ asset_url }}" alt="..." />
+                {% endimage %}
+                <br />
 
                 <p>Commandez un coursier directement sur notre site et demandez vos médicaments.</p>
             </div>
 
             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 text-center">
 
-                <img class="center-block" src="css/pic/clt.svg" alt="..."/><br />
+                {% image '@FrontendFrontendBundle/Resources/public/css/pic/clt.svg' %}
+                <img class="center-block" src="{{ asset_url }}" alt="..." />
+                {% endimage %}
+                <br />
 
                 <p>Un coursier se dirige <b>immédiatement</b> vers vous pour récupérer votre ordonnance si nécessaire sinon <b>directement</b> à la pharmacie.</p>
             </div>
 
             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 text-center ">
-                <img class="center-block" src="css/pic/suiver.svg" alt="..."/><br />
+                {% image '@FrontendFrontendBundle/Resources/public/css/pic/suiver.svg' %}
+                <img class="center-block" src="{{ asset_url }}" alt="..." />
+                {% endimage %}
+                <br />
 
                 <p>Ne perdez pas votre coursier de vue et suivez l'évolution de votre commande <b>en ligne et en temps réel.</b></p>
             </div>
 
             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 text-center">
-                <img class="center-block" src="css/pic/livrer.svg" alt="..."/><br />
+                {% image '@FrontendFrontendBundle/Resources/public/css/pic/livrer.svg' %}
+                <img class="center-block" src="{{ asset_url }}" alt="..." />
+                {% endimage %}
+                <br />
 
                 <p>Recevez votre livraison et presentez votre <b>code d'accusé de réception </b> au coursier avec le paiement.</p>
             </div>

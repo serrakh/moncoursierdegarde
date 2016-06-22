@@ -10,6 +10,6 @@ frontend_rate:
     path:     /rate
     defaults: { _controller: FrontendFrontendBundle:Home:rate }
 
-frontend_conatct:
+frontend_contact:
     path:     /contact
-    defaults: { _controller: FrontendFrontendBundle:Home:about }
+    defaults: { _controller: FrontendFrontendBundle:Home:contact }

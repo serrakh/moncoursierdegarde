@@ -1,3 +1,15 @@
-frontend_frontend_homepage:
+frontend_homepage:
     path:     /
     defaults: { _controller: FrontendFrontendBundle:Home:index }
+
+frontend_about:
+    path:     /about
+    defaults: { _controller: FrontendFrontendBundle:Home:about }
+
+frontend_rate:
+    path:     /rate
+    defaults: { _controller: FrontendFrontendBundle:Home:rate }
+
+frontend_conatct:
+    path:     /contact
+    defaults: { _controller: FrontendFrontendBundle:Home:about }

@@ -20,4 +20,20 @@ class HomeController extends Controller
         return $this->render('FrontendFrontendBundle:HomeManager:body.html.twig');
     }
 
+    public function aboutAction()
+    {
+        return $this->render('FrontendFrontendBundle:Pages:about.html.twig');
+    }
+
+    public function rateAction()
+    {
+        return $this->render('FrontendFrontendBundle:Pages:rate.html.twig');
+    }
+
+
+    public function contactAction()
+    {
+        return $this->render('FrontendFrontendBundle:Pages:contact.html.twig');
+    }
+
 }

@@ -8,3 +8,46 @@
 {% block headernav %}
     {{ parent() }}
 {% endblock %}
+{% block body %}
+    <div class="container interligne apro">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center ">
+            <h3 class="text-uppercase">Qui sommes nous ?</h3>
+            <p><b>Moncoursierdegarde.ma</b> est un service édité par la société MALAKDIS' sarl , un réseau de coursiers disponible à Rabat et bientôt dans toutes les grandes villes marocaines.
+
+                <br/>Lorsque vous êtes âgé(e) ou dans l'incapacité de vous déplacer, un service de livraison de médicaments à domicile est bien pratique.
+                <b>Moncoursierdegarde.ma</b> vous offre la possibilité de commander un coursier-livreur de médicaments qui passera à la pharmacie de garde la plus proche de vous pour donner votre ordonnance et vous livrer par la suite.
+                <br/>Nos coursiers médicaux à 2 roues en moto respecteront les délais et vous offrent la possibilité d'avoir toutes les prescriptions de votre médecin à domicile.
+            </p>
+
+            <br/><br/>
+            {% image '@FrontendFrontendBundle/Resources/public/css/pic/mission.svg' %}
+            <img class="center-block" src="{{ asset_url }}" alt="..." />
+            {% endimage %}
+            <h3>NOTRE PHILOSOPHIE</h3>
+            <p>La ponctualité, la rapidité et la fiabilité sont nos clés de réussite.</p>
+            <br/><br/>
+
+
+            {% image '@FrontendFrontendBundle/Resources/public/css/pic/notremission.jpg' %}
+            <img class="center-block" src="{{ asset_url }}" alt="..." />
+            {% endimage %}
+            <h3>NOTRE MISSION</h3>
+            <p><b>Moncoursierdegarde.ma</b> a pour mission principale de vous faire livrer des médicaments de la pharmacie de garde à votre domicile ou à l'endroit où vous y êtes grace à notre systeme de géolocalisation dans le respect des délais.</p>
+
+            <br/><br/>
+            {% image '@FrontendFrontendBundle/Resources/public/css/pic/pri.svg' %}
+            <img class="center-block" src="{{ asset_url }}" alt="..." />
+            {% endimage %}
+            <h3>NOTRE PRIVILÈGE</h3>
+            <p>Nos coursiers sont équipés d'un GPS permettant la tracabilité de votre livraison en temps réel et avec la cartographie professionnel de votre espace client, vous visualisez en ligne à tout moment en un rien de temps la <b>position GPS </b> de votre coursier. Toute livraison est validée par un code d'accusé de réception personnel, presenté par le destinataire à votre coursier.
+
+            </p>
+
+
+
+        </div>
+    </div>
+{% endblock %}
+{% block footer %}
+    {{ parent() }}
+{% endblock %}

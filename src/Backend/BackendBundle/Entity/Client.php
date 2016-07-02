@@ -10,7 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="client")
  * @ORM\Entity(repositoryClass="Backend\BackendBundle\Repository\ClientRepository")
  */
-class Client
+class Client extends User
 {
     /**
      * @var int
@@ -19,12 +19,12 @@ class Client
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
 
     /**
      * @ORM\OneToMany(targetEntity="Backend\BackendBundle\Entity\Historique" , mappedBy="client")
      */
-    private $historiques;
+    protected $historiques;
 
 
     /**

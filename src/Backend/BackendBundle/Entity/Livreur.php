@@ -10,7 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="livreur")
  * @ORM\Entity(repositoryClass="Backend\BackendBundle\Repository\LivreurRepository")
  */
-class Livreur
+class Livreur extends User
 {
     /**
      * @var int
@@ -19,62 +19,62 @@ class Livreur
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
 
     /**
      * @var int
      *
      * @ORM\Column(name="etat", type="smallint")
      */
-    private $etat;
+    protected $etat;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="heureDebut", type="datetimetz")
+     * @ORM\Column(name="heureDebut", type="datetime")
      */
-    private $heureDebut;
+    protected $heureDebut;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="heureFin", type="datetimetz")
+     * @ORM\Column(name="heureFin", type="datetime")
      */
-    private $heureFin;
+    protected $heureFin;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="dateDebut", type="datetimetz")
+     * @ORM\Column(name="dateDebut", type="datetime")
      */
-    private $dateDebut;
+    protected $dateDebut;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="dateFin", type="datetimetz")
+     * @ORM\Column(name="dateFin", type="datetime")
      */
-    private $dateFin;
+    protected $dateFin;
 
     /**
      * @ORM\ManyToOne(targetEntity="Backend\BackendBundle\Entity\Rapport" , inversedBy="livreurs")
      */
-    private $rapport;
+    protected $rapport;
 
     /**
      * @ORM\ManyToOne(targetEntity="Backend\BackendBundle\Entity\Groupe" , inversedBy="livreurs")
      */
-    private $groupe;
+    protected $groupe;
 
     /**
      * @ORM\OneToMany(targetEntity="Backend\BackendBundle\Entity\Mission" , mappedBy="livreur")
      */
-    private $missions;
+    protected $missions;
 
     /**
      * @ORM\OneToMany(targetEntity="Backend\BackendBundle\Entity\Message" , mappedBy="livreur")
      */
-    private $messages;
+    protected $messages;
 
 
     /**

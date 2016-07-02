@@ -48,12 +48,13 @@ class User extends BaseUser
     protected $adresse;
 
     /**
-     * @ORM\Column(name="latitude", type="decimal", scale="7")
+     *
+     * @ORM\Column(name="latitude", type="decimal")
      */
     protected $latitude;
 
     /**
-     * @ORM\Column(name="longitude", type="decimal", scale="10")
+     * @ORM\Column(name="longitude", type="decimal")
      */
     protected $longitude;
 }

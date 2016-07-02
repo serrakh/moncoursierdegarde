@@ -4,6 +4,7 @@ parameters:
 #    parameter_name: value
 
 services:
-#    service_name:
-#        class: AppBundle\Directory\ClassName
-#        arguments: ["@another_service_name", "plain_value", "%parameter_name%"]
+    backuser.form.registration:
+        class: Backend\BackendBundle\Form\ClientType
+        tags:
+            - { name: form.type, alias: back_user_registration }

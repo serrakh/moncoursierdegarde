@@ -3,5 +3,5 @@ Frontend:
     prefix:   /
 
 BackEnd:
-    resource: "@BackendBackendBundle/Resources/config/routing_admin.yml"
+    resource: "@BackendBackendBundle/Resources/config/routing.yml"
     prefix:   /admin

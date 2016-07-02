@@ -1,0 +1,64 @@
+{% extends '::layout.html.twig' %}
+
+{% block body %}
+<div class="container">
+    <div class="row centered-form">
+        <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Créer un compte <small>Mlih!</small></h3>
+                </div>
+                <div class="panel-body">
+                    <form method="POST" action="{{ path('user_Add_user') }}">
+                        <div class="row">
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <div class="form-group">
+                                    {{ form_errors(form.name) }}
+                                    {{ form_widget(form.name, { 'attr': {'class': 'form-control input-sm','placeholder': 'First Name'} }) }}
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <div class="form-group">
+                                    {{ form_errors(form.username) }}
+                                    {{ form_widget(form.username, { 'attr': {'class': 'form-control input-sm','placeholder': 'Last Name'} }) }}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            {{ form_errors(form.email) }}
+                            {{ form_widget(form.email, { 'attr': {'class': 'form-control input-sm','placeholder': 'Email Address'} }) }}
+                        </div>
+
+                        <div class="form-group">
+                            {{ form_errors(form.mobile) }}
+                            {{ form_widget(form.mobile, { 'attr': {'class': 'form-control input-sm','placeholder': 'Télephone'} }) }}
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <div class="form-group">
+                                    {{ form_errors(form.plainPassword.first) }}
+                                    {{ form_widget(form.plainPassword.first, { 'attr': {'class': 'form-control input-sm','placeholder': 'Password'} }) }}
+
+
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <div class="form-group">
+                                    {{ form_errors(form.plainPassword.second) }}
+                                    {{ form_widget(form.plainPassword.second, { 'attr': {'class': 'form-control input-sm','placeholder': 'Repeat Password'} }) }}
+                                </div>
+                            </div>
+                        </div>
+
+                        <input type="submit" value="Register" class="btn btn-info btn-block">
+                        {{ form_widget(form._token) }}
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

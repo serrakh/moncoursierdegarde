@@ -45,7 +45,7 @@ class Message
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="dateMessage", type="datetimetz")
+     * @ORM\Column(name="dateMessage", type="datetime")
      */
     private $dateMessage;
 

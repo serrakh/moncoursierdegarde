@@ -16,6 +16,7 @@ class ClientType extends AbstractType
     {
         $builder
             ->add('type')
+            ->add('name')
             ->add('mobile')
             ->add('adresse')
             ->add('latitude')

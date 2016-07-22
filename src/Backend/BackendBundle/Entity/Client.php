@@ -36,6 +36,13 @@ class Client extends User
     /**
      * @var string
      *
+     * @ORM\Column(type="string", length=255)
+     */
+    protected $name;
+
+    /**
+     * @var string
+     *
      * @ORM\Column(name="mobile", type="string" , length=50)
      */
     protected $mobile;
@@ -70,6 +77,16 @@ class Client extends User
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * Get name
+     *
+     * @return mixed
+     */
+    public function getName()
+    {
+        return $this->name;
     }
     /**
      * Constructor

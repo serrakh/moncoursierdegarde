@@ -19,6 +19,10 @@ class ManagerController extends Controller
         $form = $this->createForm(new ClientType() , $client);
         $form->handleRequest($request);
         if ($form->isValid()) {
+            $client_data = $form->getData();
+            var_dump($client_data->getName().'&&'.$client_data->getUsername().'&&'.$client_data->getEmail().'&&'.$client_data->getPassword().'&&'.$client_data->getAdresse());
+            die;
+            $client->setUsername($client_data->getEmail());
             $client->addRole('ROLE_USER');
             $client->setEnabled(true);
             $client->setType(123);

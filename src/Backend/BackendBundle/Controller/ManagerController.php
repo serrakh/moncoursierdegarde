@@ -20,15 +20,17 @@ class ManagerController extends Controller
         $form->handleRequest($request);
         if ($form->isValid()) {
             $client_data = $form->getData();
-            var_dump($client_data->getName().'&&'.$client_data->getUsername().'&&'.$client_data->getEmail().'&&'.$client_data->getPassword().'&&'.$client_data->getAdresse());
+            //var_dump($client_data->getName().'&&'.$client_data->getUsername().'&&'.$client_data->getEmail().'&&'.$client_data->getPassword().'&&'.$client_data->getAdresse());
+            var_dump($client_data);
             die;
-            $client->setUsername($client_data->getEmail());
+            $client->setUsername($client_data->getUsername());
+            $client->setName($client_data->getName());
             $client->addRole('ROLE_USER');
             $client->setEnabled(true);
-            $client->setType(123);
-            $client->setAdresse('test');
-            $client->setLatitude('dfsd');
-            $client->setLongitude('AEZER');
+            //$client->setType(123);
+            $client->setAdresse($client_data->getAdresse());
+            $client->setLatitude($client_data->getLatitude());
+            $client->setLongitude($client_data->getLongitude());
             $em->persist($client);
             $em->flush();
             return $this->redirect($this->generateUrl('frontend_homepage'));

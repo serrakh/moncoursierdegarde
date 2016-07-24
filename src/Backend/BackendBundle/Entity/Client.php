@@ -89,6 +89,13 @@ class Client extends User
         return $this->name;
     }
     /**
+     * @param mixed $name
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+    }
+    /**
      * Constructor
      */
     public function __construct()

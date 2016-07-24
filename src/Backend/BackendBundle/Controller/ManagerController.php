@@ -21,13 +21,13 @@ class ManagerController extends Controller
         if ($form->isValid()) {
             $client_data = $form->getData();
             //var_dump($client_data->getName().'&&'.$client_data->getUsername().'&&'.$client_data->getEmail().'&&'.$client_data->getPassword().'&&'.$client_data->getAdresse());
-            var_dump($client_data);
-            die;
+            /*var_dump($client_data);
+            die;*/
             $client->setUsername($client_data->getUsername());
             $client->setName($client_data->getName());
             $client->addRole('ROLE_USER');
             $client->setEnabled(true);
-            //$client->setType(123);
+            $client->setType(123);
             $client->setAdresse($client_data->getAdresse());
             $client->setLatitude($client_data->getLatitude());
             $client->setLongitude($client_data->getLongitude());

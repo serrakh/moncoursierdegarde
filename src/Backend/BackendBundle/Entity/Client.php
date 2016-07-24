@@ -29,7 +29,7 @@ class Client extends User
     /**
      * @var int
      *
-     * @ORM\Column(name="type", type="smallint")
+     * @ORM\Column(name="type", type="smallint", nullable=true)
      */
     protected $type;
 
@@ -57,14 +57,14 @@ class Client extends User
     /**
      * @var float
      *
-     * @ORM\Column(name="latitude", type="decimal")
+     * @ORM\Column(name="latitude", type="decimal", nullable=true)
      */
     protected $latitude;
 
     /**
      * @var float
      *
-     * @ORM\Column(name="longitude", type="decimal")
+     * @ORM\Column(name="longitude", type="decimal", nullable=true)
      */
     protected $longitude;
 

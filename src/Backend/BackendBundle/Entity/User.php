@@ -29,7 +29,7 @@ class User extends BaseUser
     /**
      * @var string
      *
-     * @ORM\Column(name="type", type="string", length=255)
+     * @ORM\Column(name="type", type="string", length=255, nullable=true)
      */
     protected $type;
 
@@ -49,12 +49,12 @@ class User extends BaseUser
 
     /**
      *
-     * @ORM\Column(name="latitude", type="decimal")
+     * @ORM\Column(name="latitude", type="decimal", nullable=true)
      */
     protected $latitude;
 
     /**
-     * @ORM\Column(name="longitude", type="decimal")
+     * @ORM\Column(name="longitude", type="decimal", nullable=true)
      */
     protected $longitude;
 }

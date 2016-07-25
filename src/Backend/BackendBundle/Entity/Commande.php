@@ -29,6 +29,34 @@ class Commande
     private $etat;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="numCommande", type="string", length=255)
+     */
+    private $numCommande;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="libelle", type="string", length=255)
+     */
+    private $libelle;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ordonance", type="boolean")
+     */
+    private $ordonance;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="description", type="text")
+     */
+    private $description;
+
+    /**
      * @ORM\OneToOne(targetEntity="Backend\BackendBundle\Entity\Historique" , mappedBy="commande")
      */
     private $historique;
@@ -88,5 +116,97 @@ class Commande
     public function getHistorique()
     {
         return $this->historique;
+    }
+
+    /**
+     * Set numCommande
+     *
+     * @param string $numCommande
+     * @return Commande
+     */
+    public function setNumCommande($numCommande)
+    {
+        $this->numCommande = $numCommande;
+
+        return $this;
+    }
+
+    /**
+     * Get numCommande
+     *
+     * @return string 
+     */
+    public function getNumCommande()
+    {
+        return $this->numCommande;
+    }
+
+    /**
+     * Set libelle
+     *
+     * @param string $libelle
+     * @return Commande
+     */
+    public function setLibelle($libelle)
+    {
+        $this->libelle = $libelle;
+
+        return $this;
+    }
+
+    /**
+     * Get libelle
+     *
+     * @return string 
+     */
+    public function getLibelle()
+    {
+        return $this->libelle;
+    }
+
+    /**
+     * Set ordonance
+     *
+     * @param boolean $ordonance
+     * @return Commande
+     */
+    public function setOrdonance($ordonance)
+    {
+        $this->ordonance = $ordonance;
+
+        return $this;
+    }
+
+    /**
+     * Get ordonance
+     *
+     * @return boolean 
+     */
+    public function getOrdonance()
+    {
+        return $this->ordonance;
+    }
+
+    /**
+     * Set description
+     *
+     * @param string $description
+     * @return Commande
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * Get description
+     *
+     * @return string 
+     */
+    public function getDescription()
+    {
+        return $this->description;
     }
 }

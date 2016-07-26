@@ -11,11 +11,11 @@
 {% block body %}
 
 <div class="cover-home"><h1 class="text-uppercase">coursier à la demande</h1><p>Commandez votre coursier et demandez la livraison de vos médicaments à votre position GPS </p>
-    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-        <button type="button" class="btnmdg  center-block " onclick='window.location="{{ path('user_command') }}"'>COMMANDER UN COURSIER</button>
-    {% else %}
-        <button type="button" class="btnmdg  center-block " data-toggle="modal" data-target="#login-modal">COMMANDER UN COURSIER</button>
-    {% endif %}
+    {#{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}#}
+        <button type="button" class="btnmdg  center-block " onclick='window.location="{{ path('add_command') }}"'>COMMANDER UN COURSIER</button>
+    {#{% else %}#}
+        {#<button type="button" class="btnmdg  center-block " data-toggle="modal" data-target="#login-modal">COMMANDER UN COURSIER</button>#}
+    {#{% endif %}#}
 </div>
     {% if is_granted("IS_AUTHENTICATED_REMEMBERED") == false %}
     <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">

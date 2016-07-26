@@ -1,3 +1,7 @@
 user_Add_user:
     path:     /adduser
     defaults: { _controller: BackendBackendBundle:Manager:register }
+
+add_command:
+    path:     /commande
+    defaults: { _controller: BackendBackendBundle:Manager:commande }

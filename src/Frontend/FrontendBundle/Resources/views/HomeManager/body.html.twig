@@ -22,10 +22,16 @@
         <div class="modal-dialog">
             <div class="loginmodal-container">
                 <h1>Connectez-vous à votre compte</h1><br>
-                <form>
-                    <input type="text" name="user" placeholder="Nom d'utilisateur">
-                    <input type="password" name="pass" placeholder="Mot de passe">
-                    <input type="submit" name="login" class="login loginmodal-submit" value="S'identifier">
+                <form id="login-form" action="{{ path("fos_user_security_check") }}" method="post">
+                    <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+                    <input type="text" id="username" name="_username" value="" required="required" tabindex="1" class="form-control" placeholder="{{ 'security.login.username'|trans({}, 'FOSUserBundle') }}" />
+
+                    <input type="password" name="_password" id="password" tabindex="2" class="form-control" placeholder="{{ 'security.login.password'|trans({}, 'FOSUserBundle') }}" required="required" />
+                    <input type="checkbox" tabindex="3" id="remember_me" name="_remember_me" value="on" />
+
+                    <label for="remember_me">{{ 'security.login.remember_me'|trans({}, 'FOSUserBundle') }}</label>
+                    <input type="submit" tabindex="4" id="_submit" name="_submit" class="login loginmodal-submit" value="{{ 'security.login.submit'|trans({}, 'FOSUserBundle') }}" />
+
                 </form>
 
                 <div class="login-help">

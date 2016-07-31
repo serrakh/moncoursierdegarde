@@ -6,24 +6,46 @@ use Backend\BackendBundle\Entity\Client;
 use Backend\BackendBundle\Form\ClientType;
 use Backend\BackendBundle\Form\CommandeType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use FOS\UserBundle\Model\UserInterface;
+
 
 class ManagerController extends Controller
 {
     public function commandeAction(Request $request){
-        $em = $this->getDoctrine()->getEntityManager();
-        $client = $em->getRepository('BackendBackendBundle:Client');
-        $c0 = $client->find(1);
+        $item = $this->getDoctrine()
+            ->getRepository('BackendBackendBundle:User')
+            ->find(3);
+
+        if ($item instanceof Client) {
+            // Then it's an Event
+            //echo $item->getName();
+            $user = $this->getUser();
+            $username = $user->getUsername();
+            $userId = $user->getId();
+            $name = $user->getName();
+            $usermail = $user->getEmail();
+            $mobile = $user->getMobile();
+            $adresse = $user->getAdresse();
+        }
         $form = $this->createForm(new CommandeType());
+        $client = new Client();
+        $userform = $this->createForm(new ClientType() , $client);
         $form->handleRequest($request);
         if ($request->isMethod('post')) {
             if ($form->isValid()) {
                 return new Response('ok');
             }
         }
-        return $this->render('@BackendBackend/command.html.twig',[
-            'form' => $form->createView()
+        return $this->render('BackendBackendBundle:CommandeManager:command.html.twig',[
+            'commandform' => $form->createView(),
+            'clientform' => $userform->createView(),
+            'username' => $username,
+            'name' => $name,
+            'mobile' => $mobile,
+            'adresse' => $adresse
         ]);
     }
 
@@ -48,11 +70,38 @@ class ManagerController extends Controller
             $client->setLongitude($client_data->getLongitude());
             $em->persist($client);
             $em->flush();
-            return $this->redirect($this->generateUrl('frontend_homepage'));
+            $route = 'frontend_homepage';
+            $this->addFlash(
+                'userep',
+                'votre compte à éte bien céer!'
+            );
+            $url = $this->container->get('router')->generate($route);
+            $response = new RedirectResponse($url);
+            $this->authenticateUser($client_data, $response);
+            return $response;
         }
         return $this->render('BackendBackendBundle:UserManager:registration.html.twig',[
             'form' => $form->createView(),
         ]);
+    }
+
+    /**
+     * Authenticate a user with Symfony Security
+     *
+     * @param \FOS\UserBundle\Model\UserInterface $user
+     * @param \Symfony\Component\HttpFoundation\Response $response
+     */
+    protected function authenticateUser(UserInterface $user, Response $response)
+    {
+        try {
+            $this->container->get('fos_user.security.login_manager')->loginUser(
+                $this->container->getParameter('fos_user.firewall_name'),
+                $user,
+                $response);
+        } catch (AccountStatusException $ex) {
+            // We simply do not authenticate users which do not pass the user
+            // checker (not enabled, expired, etc.).
+        }
     }
 
 }

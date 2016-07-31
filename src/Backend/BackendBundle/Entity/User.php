@@ -13,6 +13,9 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity
+ * @ORM\InheritanceType("SINGLE_TABLE")
+ * @ORM\DiscriminatorColumn(name="discr", type="string")
+ * @ORM\DiscriminatorMap({"user" = "User", "client" = "Client", "livreur" = "Livreur"})
  * @ORM\Table(name="user")
  */
 class User extends BaseUser

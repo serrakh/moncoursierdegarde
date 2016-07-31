@@ -66,6 +66,11 @@
 
             </ul>
         </div>
+        {% for flash_message in app.session.flashbag.get('userep') %}
+            <div class="alert alert-success">
+                <strong><span class="glyphicon glyphicon-ok"></span> {{ flash_message }}</strong>
+            </div>
+        {% endfor %}
         <!-- /.navbar-collapse -->
     </div>
     <!-- /.container -->

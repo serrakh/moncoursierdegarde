@@ -38,29 +38,29 @@
                             <div class="input-group con input-group-sm">
                                 <span class="input-group-addon" id="sizing-addon2"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></span>
                                 {{ form_errors(clientform.name) }}
-                                {{ form_widget(clientform.name, { 'attr': {'class': 'form-control input-sm','placeholder': 'Nom * '} }) }}
+                                {{ form_widget(clientform.name, { 'attr': {'class': 'form-control input-sm','value' : username,'placeholder': 'Nom * '} }) }}
                             </div>
                             <div class="input-group con input-group-sm">
                                 <span class="input-group-addon" id="sizing-addon2"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></span>
                                 {{ form_errors(clientform.username) }}
-                                {{ form_widget(clientform.username, { 'attr': {'class': 'form-control input-sm','placeholder': 'Prenom *'} }) }}
+                                {{ form_widget(clientform.username, { 'attr': {'class': 'form-control input-sm','value' : name,'placeholder': 'Prenom *'} }) }}
                             </div>
                             <div class="input-group con input-group-sm">
                                 <span class="input-group-addon" id="sizing-addon1"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span></span>
                                 {{ form_errors(clientform.email) }}
-                                {{ form_widget(clientform.email, { 'attr': {'class': 'form-control input-sm','placeholder': 'Email Address * '} }) }}
+                                {{ form_widget(clientform.email, { 'attr': {'class': 'form-control input-sm','value' : usermail,'placeholder': 'Email Address * '} }) }}
                             </div>
 
                             <div class="input-group con input-group-sm">
                                 <span class="input-group-addon" id="sizing-addon2"><span class="glyphicon glyphicon-phone" aria-hidden="true"></span></span>
                                 {{ form_errors(clientform.mobile) }}
-                                {{ form_widget(clientform.mobile, { 'attr': {'class': 'form-control input-sm','placeholder': 'Numéro de Téléphone * '} }) }}
+                                {{ form_widget(clientform.mobile, { 'attr': {'class': 'form-control input-sm','value' : mobile,'placeholder': 'Numéro de Téléphone * '} }) }}
                             </div>
 
 
                             <div class="input-group con input-group-sm">
                                 {{ form_errors(clientform.adresse) }}
-                                {{ form_widget(clientform.adresse, { 'attr': {'class': 'form-control input-sm','placeholder': 'adresse *'} }) }}
+                                {{ form_widget(clientform.adresse, { 'attr': {'class': 'form-control input-sm','value' : adresse,'placeholder': 'adresse *'} }) }}
                             </div>
                         </div>
                     </div>

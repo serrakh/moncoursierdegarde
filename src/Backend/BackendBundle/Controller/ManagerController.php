@@ -43,6 +43,7 @@ class ManagerController extends Controller
             'commandform' => $form->createView(),
             'clientform' => $userform->createView(),
             'username' => $username,
+            'usermail' => $usermail,
             'name' => $name,
             'mobile' => $mobile,
             'adresse' => $adresse

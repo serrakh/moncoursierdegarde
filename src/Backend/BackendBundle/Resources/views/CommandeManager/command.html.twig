@@ -9,58 +9,65 @@
     {{ parent() }}
 {% endblock %}
 {% block body %}
-    <div class="cover-home"><h1 class="text-uppercase">coursier à la demande</h1><p>Commandez votre coursier et demandez la livraison de vos médicaments à votre position GPS </p>
+    <div class="cover-home"><h1 class="text-uppercase">coursier à la demande</h1>
+
+        <p>Commandez votre coursier et demandez la livraison de vos médicaments à votre position GPS </p>
     </div>
     <div class="container ">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 interligne ">
             <h3>Formulaie de commande</h3>
 
             <div class="form-group ">
-                <form method="POST" action="{#{ path('user_Add_command') }}#}" >
+                <form method="POST" action="{#{ path('user_Add_command') }}#}">
                     <div class="row">
-                            <div class="col-lg-6 col-md-6">
-                                <div class="input-group con input-group-sm">
-                                    <span class="input-group-addon" id="sizing-addon2"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></span>
-                                    {{ form_errors(commandform.libelle) }}
-                                    {{ form_widget(commandform.libelle, { 'attr': {'class': 'form-control input-sm','placeholder': 'Libelle * '} }) }}
-                                </div>
-                                <div class="input-group con input-group-sm">
-                                    {{ form_errors(commandform.ordonance) }}
-                                    {{ form_widget(commandform.ordonance) }}
-                                </div>
-                                <div class="input-group con input-group-sm">
-                                    {{ form_errors(commandform.description) }}
-                                    {{ form_widget(commandform.description, { 'attr': {'class': 'form-control input-sm','placeholder': 'description * '} }) }}
-                                </div>
+                        <div class="col-lg-6 col-md-6">
+                            <div class="input-group con input-group-sm">
+                                <span class="input-group-addon" id="sizing-addon2"><span
+                                            class="glyphicon glyphicon-user" aria-hidden="true"></span></span>
+                                {{ form_errors(commandform.libelle) }}
+                                {{ form_widget(commandform.libelle, { 'attr': {'class': 'form-control input-sm','placeholder': 'Libelle * '} }) }}
+                            </div>
+                            <div class="input-group con input-group-sm">
+                                {{ form_errors(commandform.ordonance) }}
+                                {{ form_widget(commandform.ordonance) }}
+                            </div>
+                            <div class="input-group con input-group-sm">
+                                {{ form_errors(commandform.description) }}
+                                {{ form_widget(commandform.description, { 'attr': {'class': 'form-control input-sm','placeholder': 'description * '} }) }}
+                            </div>
 
                         </div>
                         <div class="col-lg-6 col-md-6">
                             <div class="input-group con input-group-sm">
-                                <span class="input-group-addon" id="sizing-addon2"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></span>
+                                <span class="input-group-addon" id="sizing-addon2"><span
+                                            class="glyphicon glyphicon-user" aria-hidden="true"></span></span>
                                 {{ form_errors(clientform.name) }}
-                                {{ form_widget(clientform.name, { 'attr': {'class': 'form-control input-sm','value' : username,'placeholder': 'Nom * '} }) }}
+                                {{ form_widget(clientform.name, { 'attr': {'class': 'form-control input-sm','value' : app.user.name,'placeholder': 'Nom * '} }) }}
                             </div>
                             <div class="input-group con input-group-sm">
-                                <span class="input-group-addon" id="sizing-addon2"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></span>
+                                <span class="input-group-addon" id="sizing-addon2"><span
+                                            class="glyphicon glyphicon-user" aria-hidden="true"></span></span>
                                 {{ form_errors(clientform.username) }}
-                                {{ form_widget(clientform.username, { 'attr': {'class': 'form-control input-sm','value' : name,'placeholder': 'Prenom *'} }) }}
+                                {{ form_widget(clientform.username, { 'attr': {'class': 'form-control input-sm','value' : app.user.username,'placeholder': 'Prenom *'} }) }}
                             </div>
                             <div class="input-group con input-group-sm">
-                                <span class="input-group-addon" id="sizing-addon1"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span></span>
+                                <span class="input-group-addon" id="sizing-addon1"><span
+                                            class="glyphicon glyphicon-envelope" aria-hidden="true"></span></span>
                                 {{ form_errors(clientform.email) }}
-                                {{ form_widget(clientform.email, { 'attr': {'class': 'form-control input-sm','value' : usermail,'placeholder': 'Email Address * '} }) }}
+                                {{ form_widget(clientform.email, { 'attr': {'class': 'form-control input-sm','value' : app.user.email,'placeholder': 'Email Address * '} }) }}
                             </div>
 
                             <div class="input-group con input-group-sm">
-                                <span class="input-group-addon" id="sizing-addon2"><span class="glyphicon glyphicon-phone" aria-hidden="true"></span></span>
+                                <span class="input-group-addon" id="sizing-addon2"><span
+                                            class="glyphicon glyphicon-phone" aria-hidden="true"></span></span>
                                 {{ form_errors(clientform.mobile) }}
-                                {{ form_widget(clientform.mobile, { 'attr': {'class': 'form-control input-sm','value' : mobile,'placeholder': 'Numéro de Téléphone * '} }) }}
+                                {{ form_widget(clientform.mobile, { 'attr': {'class': 'form-control input-sm','value' : app.user.mobile,'placeholder': 'Numéro de Téléphone * '} }) }}
                             </div>
 
 
                             <div class="input-group con input-group-sm">
                                 {{ form_errors(clientform.adresse) }}
-                                {{ form_widget(clientform.adresse, { 'attr': {'class': 'form-control input-sm','value' : adresse,'placeholder': 'adresse *'} }) }}
+                                {{ form_widget(clientform.adresse, { 'value': app.user.adresse , 'attr': {'class': 'form-control input-sm','placeholder': 'adresse *'} }) }}
                             </div>
                         </div>
                     </div>
@@ -68,7 +75,8 @@
 
                     <input type="submit" value="Register" class="btn btn-primary btn-sm con">
                     {{ form_widget(clientform._token) }}
-                    <br />
+                    <br/>
+
                     <p>* les champs obligatoire</p>
 
                 </form>
@@ -76,7 +84,6 @@
 
         </div>
     </div>
-
 {% endblock %}
 {% block footer %}
     {{ parent() }}

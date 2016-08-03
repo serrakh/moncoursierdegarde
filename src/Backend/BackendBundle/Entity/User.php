@@ -13,12 +13,12 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity
- * @ORM\InheritanceType("SINGLE_TABLE")
- * @ORM\DiscriminatorColumn(name="discr", type="string")
- * @ORM\DiscriminatorMap({"user" = "User", "client" = "Client", "livreur" = "Livreur"})
+ * @ORM\InheritanceType("JOINED")
+ * @ORM\DiscriminatorColumn(name="usertype", type="string")
+ * @ORM\DiscriminatorMap({"livreur" = "Livreur", "client" = "Client"})
  * @ORM\Table(name="user")
  */
-class User extends BaseUser
+abstract class User extends BaseUser
 {
     /**
      * @var int

@@ -79,7 +79,7 @@
                                 <span class="input-group-addon" id="sizing-addon2"><span class="glyphicon glyphicon-phone" aria-hidden="true"></span></span>
                                 <input type="text"  class="long" placeholder="longitude">
                             </div>
-                            <input type="button" value="Get my position" class="btn btn-success btn-md con">
+                            <input type="button" value="Get my position" class="btn btn-success btn-md getpos">
 
                         </div>
                     </div>
@@ -105,7 +105,7 @@
 <script>
     $( document ).ready(function() {
 
-        $('.con').click(function(){
+        $('.getpos').click(function(){
             if(navigator.geolocation){
                 navigator.geolocation.getCurrentPosition(function(position){
                     var latitude = position.coords.latitude;

@@ -3,6 +3,7 @@
 namespace Backend\BackendBundle\Controller;
 
 use Backend\BackendBundle\Entity\Client;
+use Backend\BackendBundle\Entity\User;
 use Backend\BackendBundle\Form\ClientType;
 use Backend\BackendBundle\Form\CommandeType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -15,38 +16,18 @@ use FOS\UserBundle\Model\UserInterface;
 class ManagerController extends Controller
 {
     public function commandeAction(Request $request){
-        $item = $this->getDoctrine()
-            ->getRepository('BackendBackendBundle:User')
-            ->find(3);
-
-        if ($item instanceof Client) {
-            // Then it's an Event
-            //echo $item->getName();
-            $user = $this->getUser();
-            $username = $user->getUsername();
-            $userId = $user->getId();
-            $name = $user->getName();
-            $usermail = $user->getEmail();
-            $mobile = $user->getMobile();
-            $adresse = $user->getAdresse();
-        }
         $form = $this->createForm(new CommandeType());
         $client = new Client();
         $userform = $this->createForm(new ClientType() , $client);
         $form->handleRequest($request);
-        if ($request->isMethod('post')) {
-            if ($form->isValid()) {
-                return new Response('ok');
-            }
-        }
+//        if ($request->isMethod('post')) {
+//            if ($form->isValid()) {
+//                return new Response('ok');
+//            }
+//        }
         return $this->render('BackendBackendBundle:CommandeManager:command.html.twig',[
             'commandform' => $form->createView(),
-            'clientform' => $userform->createView(),
-            'username' => $username,
-            'usermail' => $usermail,
-            'name' => $name,
-            'mobile' => $mobile,
-            'adresse' => $adresse
+            'clientform' => $userform->createView()
         ]);
     }
 
@@ -58,18 +39,13 @@ class ManagerController extends Controller
         $form->handleRequest($request);
         if ($form->isValid()) {
             $client_data = $form->getData();
-            //var_dump($client_data->getName().'&&'.$client_data->getUsername().'&&'.$client_data->getEmail().'&&'.$client_data->getPassword().'&&'.$client_data->getAdresse());
-            /*var_dump($client_data);
-            die;*/
-            $client->setUsername($client_data->getUsername());
-            $client->setName($client_data->getName());
             $client->addRole('ROLE_USER');
             $client->setEnabled(true);
             $client->setType(123);
-            $client->setAdresse($client_data->getAdresse());
-            $client->setLatitude($client_data->getLatitude());
-            $client->setLongitude($client_data->getLongitude());
             $em->persist($client);
+
+            //traitement user
+//            $user->set
             $em->flush();
             $route = 'frontend_homepage';
             $this->addFlash(

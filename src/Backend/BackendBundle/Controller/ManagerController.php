@@ -3,9 +3,13 @@
 namespace Backend\BackendBundle\Controller;
 
 use Backend\BackendBundle\Entity\Client;
+use Backend\BackendBundle\Entity\Commande;
+use Backend\BackendBundle\Entity\Historique;
 use Backend\BackendBundle\Entity\User;
+use Backend\BackendBundle\Form\ClientCmdType;
 use Backend\BackendBundle\Form\ClientType;
 use Backend\BackendBundle\Form\CommandeType;
+use Backend\BackendBundle\Form\HistoriqueType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -16,18 +20,39 @@ use FOS\UserBundle\Model\UserInterface;
 class ManagerController extends Controller
 {
     public function commandeAction(Request $request){
-        $form = $this->createForm(new CommandeType());
-        $client = new Client();
-        $userform = $this->createForm(new ClientType() , $client);
+        $em = $this->getDoctrine()->getEntityManager();
+        $historique = new Historique();
+        $form = $this->createForm(new HistoriqueType(), $historique);
         $form->handleRequest($request);
+        if ($request->isMethod('post')) {
+            if ($form->isValid()) {
+                /** @var Commande $commande */
+                $commande = $form->getData()['commande'];
+                $client = $form->getData()['client'];
+                $commande->setEtat(true);
+                $commande->setHistorique($historique);
+                $em->persist($historique);
+                $em->persist($commande);
+                $em->persist($client);
+//                $em->flush();
+                return new Response('OK');
+            }
+        }
+
+//        $commande = new Commande();
+//        $form = $this->createForm(new CommandeType() , $commande);
+//        $client = new Client();
+//        $userform = $this->createForm(new ClientType() , $client);
+//        $form->handleRequest($request);
 //        if ($request->isMethod('post')) {
 //            if ($form->isValid()) {
 //                return new Response('ok');
 //            }
 //        }
         return $this->render('BackendBackendBundle:CommandeManager:command.html.twig',[
-            'commandform' => $form->createView(),
-            'clientform' => $userform->createView()
+//            'commandform' => $form->createView(),
+//            'clientform' => $userform->createView()
+            'form' => $form->createView()
         ]);
     }
 

@@ -1,9 +1,9 @@
 $(document).ready(function () {
-    $('#commande_ordonance').change(function () {
+    $('#historique_commande_ordonance').change(function () {
         if ($(this).is(":checked")) {
-            $('#commande_description').hide();
+            $('#historique_commande_description').hide();
         } else {
-            $('#commande_description').show();
+            $('#historique_commande_description').show();
         }
     });
 });

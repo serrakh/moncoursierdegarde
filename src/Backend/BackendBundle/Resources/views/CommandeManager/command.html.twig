@@ -73,12 +73,10 @@
                         </div>
                         <div class="col-lg-6 col-md-6">
                             <div class="input-group con input-group-sm">
-                                <span class="input-group-addon" id="sizing-addon2"><span class="glyphicon glyphicon-phone" aria-hidden="true"></span></span>
-                                <input type="text"  class="lat" placeholder="latitude">
-                             </div>
-                            <div class="input-group con input-group-sm">
-                                <span class="input-group-addon" id="sizing-addon2"><span class="glyphicon glyphicon-phone" aria-hidden="true"></span></span>
-                                <input type="text"  class="long" placeholder="longitude">
+                                {{ form_errors(form.client.latitude) }}
+                                {{ form_widget(form.client.latitude, { 'attr': {'class': 'lat'} }) }}
+                                {{ form_errors(form.client.longitude) }}
+                                {{ form_widget(form.client.longitude, { 'attr': {'class': 'long'} }) }}
                             </div>
                             <input type="button" value="Get my position" class="btn btn-success btn-md getpos">
 
@@ -96,4 +94,29 @@
 {% endblock %}
 {% block footer %}
     {{ parent() }}
+{% endblock %}
+{% block javascriptsFooter %}
+    {{ parent() }}
+<script>
+    $( document ).ready(function() {
+
+        $('.getpos').click(function(){
+            if(navigator.geolocation){
+                navigator.geolocation.getCurrentPosition(function(position){
+                    var latitude = position.coords.latitude;
+                    var longitude = position.coords.longitude;
+                    var altitude = position.coords.altitude;
+                    console.log('latitude : ' + latitude + '<br />' + 'longitude : ' + longitude + '<br />')
+                    $(".lat").val(latitude);
+                    $(".long").val(longitude);
+
+                });
+
+            }
+
+        })
+    });
+
+
+</script>
 {% endblock %}

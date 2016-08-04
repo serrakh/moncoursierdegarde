@@ -19,8 +19,8 @@ class ClientType extends AbstractType
             ->add('name')
             ->add('mobile')
             ->add('adresse')
-            ->add('latitude')
-            ->add('longitude')
+            ->add('latitude','hidden')
+            ->add('longitude','hidden')
         ;
     }
 

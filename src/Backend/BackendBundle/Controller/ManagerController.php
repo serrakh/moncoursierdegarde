@@ -22,13 +22,18 @@ class ManagerController extends Controller
     public function commandeAction(Request $request){
         $em = $this->getDoctrine()->getEntityManager();
         $historique = new Historique();
-        $form = $this->createForm(new HistoriqueType(), $historique);
+        /*$clt = new Client();
+        $cmd = new Commande();*/
+        $form = $this->createForm(new ClientCmdType());
         $form->handleRequest($request);
         if ($request->isMethod('post')) {
             if ($form->isValid()) {
                 /** @var Commande $commande */
                 $commande = $form->getData()['commande'];
                 $client = $form->getData()['client'];
+                var_dump($commande);
+                var_dump($client);
+                die;
                 $commande->setEtat(true);
                 $commande->setHistorique($historique);
                 $em->persist($historique);
